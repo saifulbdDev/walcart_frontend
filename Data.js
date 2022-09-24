@@ -6,6 +6,13 @@ import icon2 from "./assets/icon2.png";
 import icon4 from "./assets/icon4.png";
 import icon5 from "./assets/icon5.png";
 import icon6 from "./assets/icon6.png";
+import laptop from "./assets/categories/laptop.png";
+import appliance from "./assets/categories/appliance.png";
+import electronic from "./assets/categories/electronic.png";
+import fastfood from "./assets/categories/fastfood.png";
+import home from "./assets/categories/home.png";
+import stationary from "./assets/categories/stationary.png";
+import more from "./assets/categories/more.png";
 export const leftMenu = [
   {
     title: "About Us",
@@ -33,6 +40,7 @@ export const menuData = [
       {
         title: "Laptop and Desktop",
         url: "Laptop and Desktop",
+        icon: laptop,
         submenu: [
           {
             title: "Laptop and Desktop",
@@ -85,6 +93,7 @@ export const menuData = [
       {
         title: "Home Living",
         url: "web-dev",
+        icon: home,
       },
       {
         title: "Book and Stationary",
@@ -137,14 +146,17 @@ export const menuData = [
             url: "Book and Stationary",
           },
         ],
+        icon: stationary,
       },
       {
         title: "Home Appliances",
         url: "Book and Stationary",
+        icon:appliance,
       },
       {
         title: "Electronics Appliances",
         url: "Electronics Appliances",
+        icon: electronic,
         submenu: [
           {
             title: "Laptop and Desktop",
@@ -197,10 +209,12 @@ export const menuData = [
       {
         title: "Fast Food and Snacks",
         url: "Book and Stationary",
+        icon: fastfood,
       },
       {
         title: "More Categories",
         url: "Book and Stationary",
+        icon: more,
         submenu: [
           {
             title: "Laptop and Desktop",

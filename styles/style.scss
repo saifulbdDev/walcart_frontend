@@ -427,7 +427,7 @@ body {
             text-align: left;
             padding: 0.7rem 1rem;
             &:hover {
-              background-color: #f2f2f2;
+              background-color: #FFF2F2;
             }
           }
           a {
@@ -452,6 +452,13 @@ body {
               background: $white !important;
               position: relative;
               border-top: 1px solid #f4f4f4;
+              .item-title-div{
+                display: flex;
+                align-items: center;             
+                &-text{
+                  margin-left: 10px !important;
+                }
+              }
               &:first-child {
                 border-top: none;
               }

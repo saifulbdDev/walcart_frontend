@@ -2,8 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Dropdown from "./DropdownList";
 import Image from "next/image";
 import Link from "next/link";
-import arrow from "../../assets/arrow1.png"
-
+import arrow from "../../assets/arrow1.png";
 
 const MenuItems = ({ items, depthLevel }) => {
   const [dropdown, setDropdown] = useState(false);
@@ -56,12 +55,18 @@ const MenuItems = ({ items, depthLevel }) => {
             aria-expanded={dropdown ? "true" : "false"}
             onClick={() => setDropdown((prev) => !prev)}
           >
-            {items.icon ? <Image src={items.icon} alt={items.title} /> : ""}
-            {items.title}
+            <span className="item-title-div">
+              {items.icon ? <Image className="item-title-div-icon" src={items.icon} alt={items.title} /> : ""}
+              <span className="item-title-div-text"> {items.title}</span>
+            </span>
 
             {depthLevel > 0 && max < 960 ? null : depthLevel > 0 &&
               max > 960 ? (
-                <Image className="menu-icon" src={arrow} alt="arrow" />
+              <Image
+                className="menu-icon"
+                src={arrow}
+                alt="arrow"
+              />
             ) : (
               <span className="arrow" />
             )}
@@ -82,12 +87,18 @@ const MenuItems = ({ items, depthLevel }) => {
             aria-expanded={dropdown ? "true" : "false"}
             onClick={() => setDropdown((prev) => !prev)}
           >
-            {items.icon ? (
-              <Image className="menu-icon" src={items.icon} alt={items.title} />
-            ) : (
-              ""
-            )}{" "}
-            <span className="item-title--text">{items.title}</span>
+            <span className="item-title-div">
+              {items.icon ? (
+                <Image
+                  className="menu-icon item-title-div-icon"
+                  src={items.icon}
+                  alt={items.title}
+                />
+              ) : (
+                ""
+              )}{" "}
+              <span className="item-title--text">{items.title}</span>
+            </span>
             {depthLevel > 0 ? <span>&raquo;</span> : <span className="arrow" />}
           </button>
           {items?.parent ? <div className="divider"></div> : ""}
@@ -100,7 +111,21 @@ const MenuItems = ({ items, depthLevel }) => {
         </>
       ) : (
         <Link href={items.url}>
-          <a>{items.title}</a>
+          <a>
+            {" "}
+            <span className="item-title-div">
+              {items.icon ? (
+                <Image
+                  src={items.icon}
+                  alt={items.title}
+                  className="item-title-div-icon"
+                />
+              ) : (
+                ""
+              )}{" "}
+              <span className="item-title-div-text">{items.title}</span>
+            </span>
+          </a>
         </Link>
       )}
     </li>
