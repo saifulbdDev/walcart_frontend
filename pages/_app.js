@@ -4,6 +4,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
+        <title>Online Marketplace in Bangladesh: Walcart.com</title>
         <link
           rel="apple-touch-icon"
           sizes="57x57"
